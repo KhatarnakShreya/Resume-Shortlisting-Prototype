@@ -1,7 +1,6 @@
 let students = JSON.parse(localStorage.getItem("students")) || [];
 let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
 
-
 // NAVIGATION
 function showPage(page) {
   document.querySelectorAll(".page").forEach(p => p.style.display = "none");
@@ -9,7 +8,6 @@ function showPage(page) {
 }
 
 showPage("students");
-
 
 // RESET
 function resetData() {
@@ -36,7 +34,6 @@ function addStudent() {
   syear.value = "";
 }
 
-
 // DISPLAY STUDENTS
 function displayStudents() {
   let table = document.getElementById("studentTable");
@@ -53,8 +50,6 @@ function displayStudents() {
     `;
   });
 }
-
-
 
 // ADD JOB
 function addJob() {
@@ -75,8 +70,6 @@ function addJob() {
   jyear.value = "";
 }
 
-
-
 // DISPLAY JOBS
 function displayJobs() {
   let table = document.getElementById("jobTable");
@@ -94,9 +87,45 @@ function displayJobs() {
   });
 }
 
+// EVALUATE (FIXED VERSION)
+function results() {
+  let table = document.getElementById("resultTable");
+  table.innerHTML = "";
+
+  if (students.length === 0 || jobs.length === 0) {
+    alert("Add students and jobs first!");
+    return;
+  }
+
+  students.forEach(s => {
+    jobs.forEach(j => {
+
+      let matchedSkills = j.skills.filter(skill =>
+        s.skills.includes(skill.trim())
+      );
+
+      let score = 0;
+
+      if (s.cgpa >= j.minCGPA) score += 20;
+      if (s.year >= j.minYear) score += 10;
+      score += matchedSkills.length * 10;
+
+      let status = score >= 20 ? "Shortlisted" : "Rejected";
+
+      table.innerHTML += `
+        <tr>
+          <td>${s.name}</td>
+          <td>${j.role}</td>
+          <td>${s.cgpa}</td>
+          <td>${matchedSkills.join(", ") || "None"}</td>
+          <td>${score}</td>
+          <td class="${status === 'Shortlisted' ? 'shortlisted' : 'rejected'}">${status}</td>
+        </tr>
+      `;
+    });
+  });
+}
 
 // LOAD DATA
 displayStudents();
 displayJobs();
-
-
