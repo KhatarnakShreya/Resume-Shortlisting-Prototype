@@ -80,3 +80,13 @@ td, th {
   padding: 10px;
   border: 1px solid #ddd;
 }
+
+.shortlisted {
+  color: green;
+  font-weight: bold;
+}
+
+.rejected {
+  color: red;
+  font-weight: bold;
+}
