@@ -15,7 +15,7 @@
 
     <nav>
         <button onclick="showPage('students')">Students</button>
-        <button onclick="showPage('jobs')">Jobs</button>
+        <button onclick="showPage('jobs')">Job Requirements</button>
         <button onclick="showPage('results')">Results</button>
     </nav>
 
@@ -66,6 +66,28 @@
                 </tr>
             </thead>
             <tbody id="jobTable"></tbody>
+        </table>
+    </div>
+
+    
+    <!-- RESULTS PAGE -->
+    <div id="resultsPage" class="page">
+        <h2>Evaluation Results</h2>
+
+        <button onclick="results()">Run Evaluation</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>CGPA</th>
+                    <th>Matched Skills</th>
+                    <th>Score</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="resultTable"></tbody>
         </table>
     </div>
 
