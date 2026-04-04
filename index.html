@@ -44,6 +44,32 @@
         </table>
     </div>
 
+    <!-- JOBS PAGE -->
+    <div id="jobsPage" class="page">
+        <h2>Job Requirements</h2>
+
+        <div class="form-row">
+            <input id="jrole" placeholder="Role">
+            <input id="jcgpa" placeholder="Min CGPA">
+            <input id="jskills" placeholder="Required Skills">
+            <input id="jyear" placeholder="Min Year">
+            <button onclick="addJob()">Add</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Min CGPA</th>
+                    <th>Skills</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody id="jobTable"></tbody>
+        </table>
+    </div>
+
+
 </body>
 
 </html>
