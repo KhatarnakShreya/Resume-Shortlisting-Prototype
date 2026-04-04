@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -10,15 +10,17 @@
 </head>
 
 <body>
-     <h1>Resume Shortlisting System</h1>
 
-    <button class="reset-btn">Reset All Data</button>
+    <h1>Resume Shortlisting System</h1>
+
+    <button onclick="resetData()" class="reset-btn">Reset All Data</button>
 
     <nav>
         <button onclick="showPage('students')">Students</button>
-        <button onclick="showPage('jobs')">Job Requirements</button>
+        <button onclick="showPage('jobs')">Jobs</button>
         <button onclick="showPage('results')">Results</button>
     </nav>
+
 
     <!-- STUDENTS PAGE -->
     <div id="studentsPage" class="page">
@@ -45,6 +47,7 @@
         </table>
     </div>
 
+
     <!-- JOBS PAGE -->
     <div id="jobsPage" class="page">
         <h2>Job Requirements</h2>
@@ -70,7 +73,7 @@
         </table>
     </div>
 
-    
+
     <!-- RESULTS PAGE -->
     <div id="resultsPage" class="page">
         <h2>Evaluation Results</h2>
@@ -92,7 +95,7 @@
         </table>
     </div>
 
-
+    
 </body>
 
 </html>
