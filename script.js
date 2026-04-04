@@ -30,3 +30,19 @@ function addStudent() {
 }
 
 
+// DISPLAY STUDENTS
+function displayStudents() {
+  let table = document.getElementById("studentTable");
+  table.innerHTML = "";
+
+  students.forEach(s => {
+    table.innerHTML += `
+      <tr>
+        <td>${s.name}</td>
+        <td>${s.cgpa}</td>
+        <td>${s.skills.join(", ")}</td>
+        <td>${s.year}</td>
+      </tr>
+    `;
+  });
+}
