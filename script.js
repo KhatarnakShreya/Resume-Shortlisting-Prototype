@@ -1,3 +1,5 @@
+let students = JSON.parse(localStorage.getItem("students")) || [];
+let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
 
 
 // NAVIGATION
@@ -46,3 +48,25 @@ function displayStudents() {
     `;
   });
 }
+
+
+
+// ADD JOB
+function addJob() {
+  let j = {
+    role: jrole.value,
+    minCGPA: parseFloat(jcgpa.value),
+    skills: jskills.value.toLowerCase().split(","),
+    minYear: parseInt(jyear.value)
+  };
+
+  jobs.push(j);
+  localStorage.setItem("jobs", JSON.stringify(jobs));
+  displayJobs();
+
+  jrole.value = "";
+  jcgpa.value = "";
+  jskills.value = "";
+  jyear.value = "";
+}
+
