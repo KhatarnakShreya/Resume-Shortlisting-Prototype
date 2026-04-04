@@ -70,3 +70,28 @@ function addJob() {
   jyear.value = "";
 }
 
+
+
+// DISPLAY JOBS
+function displayJobs() {
+  let table = document.getElementById("jobTable");
+  table.innerHTML = "";
+
+  jobs.forEach(j => {
+    table.innerHTML += `
+      <tr>
+        <td>${j.role}</td>
+        <td>${j.minCGPA}</td>
+        <td>${j.skills.join(", ")}</td>
+        <td>${j.minYear}</td>
+      </tr>
+    `;
+  });
+}
+
+
+// LOAD DATA
+displayStudents();
+displayJobs();
+
+
