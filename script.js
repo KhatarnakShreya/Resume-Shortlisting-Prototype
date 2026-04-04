@@ -6,7 +6,6 @@ function showPage(page) {
   document.querySelectorAll(".page").forEach(p => p.style.display = "none");
   document.getElementById(page + "Page").style.display = "block";
 }
-
 showPage("students");
 
 // RESET
@@ -17,10 +16,15 @@ function resetData() {
 
 // ADD STUDENT
 function addStudent() {
+  if (!sname.value || isNaN(scgpa.value) || !sskills.value || isNaN(syear.value)) {
+    alert("Please fill all fields correctly!");
+    return;
+  }
+
   let s = {
-    name: sname.value,
+    name: sname.value.trim(),
     cgpa: parseFloat(scgpa.value),
-    skills: sskills.value.toLowerCase().split(","),
+    skills: sskills.value.toLowerCase().split(",").map(skill => skill.trim()),
     year: parseInt(syear.value)
   };
 
@@ -53,10 +57,15 @@ function displayStudents() {
 
 // ADD JOB
 function addJob() {
+  if (!jrole.value || isNaN(jcgpa.value) || !jskills.value || isNaN(jyear.value)) {
+    alert("Please fill all fields correctly!");
+    return;
+  }
+
   let j = {
-    role: jrole.value,
+    role: jrole.value.trim(),
     minCGPA: parseFloat(jcgpa.value),
-    skills: jskills.value.toLowerCase().split(","),
+    skills: jskills.value.toLowerCase().split(",").map(skill => skill.trim()),
     minYear: parseInt(jyear.value)
   };
 
@@ -87,7 +96,7 @@ function displayJobs() {
   });
 }
 
-// EVALUATE (FIXED VERSION)
+// EVALUATE
 function results() {
   let table = document.getElementById("resultTable");
   table.innerHTML = "";
@@ -99,21 +108,21 @@ function results() {
 
   students.forEach(s => {
     jobs.forEach(j => {
+      let matchedSkills = j.skills.filter(skill => s.skills.includes(skill));
 
-      let matchedSkills = j.skills.filter(skill =>
-        s.skills.includes(skill.trim())
-      );
-
+      // Weighted scoring
       let score = 0;
+      if (s.cgpa >= j.minCGPA) score += 30;
+      if (s.year >= j.minYear) score += 20;
+      score += matchedSkills.length * 15;
 
-      if (s.cgpa >= j.minCGPA) score += 20;
-      if (s.year >= j.minYear) score += 10;
-      score += matchedSkills.length * 10;
-
-      let status = score >= 20 ? "Shortlisted" : "Rejected";
+      // Status criteria
+      let status = (s.cgpa >= j.minCGPA && s.year >= j.minYear && matchedSkills.length > 0)
+        ? "Shortlisted"
+        : "Rejected";
 
       table.innerHTML += `
-        <tr>
+        <tr class="${status === 'Shortlisted' ? 'shortlisted-row' : 'rejected-row'}">
           <td>${s.name}</td>
           <td>${j.role}</td>
           <td>${s.cgpa}</td>
@@ -124,6 +133,29 @@ function results() {
       `;
     });
   });
+
+  // Add export button dynamically
+  if (!document.querySelector(".export-btn")) {
+    let btn = document.createElement("button");
+    btn.innerText = "Export Results (CSV)";
+    btn.className = "export-btn";
+    btn.onclick = exportResults;
+    document.getElementById("resultsPage").appendChild(btn);
+  }
+}
+
+// EXPORT RESULTS
+function exportResults() {
+  let csv = "Name,Role,CGPA,Matched Skills,Score,Status\n";
+  document.querySelectorAll("#resultTable tr").forEach(row => {
+    let cols = [...row.querySelectorAll("td")].map(td => td.innerText);
+    csv += cols.join(",") + "\n";
+  });
+  let blob = new Blob([csv], { type: "text/csv" });
+  let link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "results.csv";
+  link.click();
 }
 
 // LOAD DATA
