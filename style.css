@@ -2,7 +2,6 @@
 *{
     padding: 0;
     margin: 0;
-    border: 0;
 }
 
 body {
@@ -34,7 +33,6 @@ nav button:hover {
   background: #1e40af;
 }
 
-
 button {
   padding: 8px 15px;
   cursor: pointer;
@@ -45,4 +43,40 @@ button {
   color: white;
   border: none;
   margin: 10px;
+}
+
+.page {
+  /* display: none; */
+  margin-top: 20px;
+}
+
+h2{
+    margin: 1.5rem 1rem 1rem;
+}
+
+.form-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+}
+
+table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+th {
+  background: #2563eb;
+  color: white;
+}
+
+td, th {
+  padding: 10px;
+  border: 1px solid #ddd;
 }
