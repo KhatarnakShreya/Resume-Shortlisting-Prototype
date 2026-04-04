@@ -11,6 +11,11 @@ function showPage(page) {
 showPage("students");
 
 
+// RESET
+function resetData() {
+  localStorage.clear();
+  location.reload();
+}
 
 // ADD STUDENT
 function addStudent() {
