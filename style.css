@@ -14,7 +14,7 @@ body {
 h1 {
   background: #2563eb;
   color: white;
-  padding: 15px;
+  padding: 1.6rem;
 }
 
 nav {
@@ -34,3 +34,15 @@ nav button:hover {
   background: #1e40af;
 }
 
+
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background: red;
+  color: white;
+  border: none;
+  margin: 10px;
+}

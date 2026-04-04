@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Shortlisting System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -17,6 +18,31 @@
         <button onclick="showPage('jobs')">Jobs</button>
         <button onclick="showPage('results')">Results</button>
     </nav>
+
+    <!-- STUDENTS PAGE -->
+    <div id="studentsPage" class="page">
+        <h2>Student Entry</h2>
+
+        <div class="form-row">
+            <input id="sname" placeholder="Name">
+            <input id="scgpa" placeholder="CGPA">
+            <input id="sskills" placeholder="Skills (comma separated)">
+            <input id="syear" placeholder="Year">
+            <button onclick="addStudent()">Add</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>CGPA</th>
+                    <th>Skills</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable"></tbody>
+        </table>
+    </div>
 
 </body>
 
