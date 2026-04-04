@@ -5,3 +5,32 @@
     border: 0;
 }
 
+body {
+  font-family: Arial;
+  background: #f4f6f9;
+  text-align: center;
+}
+
+h1 {
+  background: #2563eb;
+  color: white;
+  padding: 15px;
+}
+
+nav {
+  margin: 10px;
+}
+
+nav button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: #1e40af;
+}
+
