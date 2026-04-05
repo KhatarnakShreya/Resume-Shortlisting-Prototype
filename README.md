@@ -3,8 +3,10 @@
 ![HTML5](https://img.shields.io/badge/HTML5-black?style=plastic&logo=html5)
 ![CSS3](https://img.shields.io/badge/CSS-black?style=plastic&logo=css)
 ![JavaScript](https://img.shields.io/badge/JavaScript-black?style=plastic&logo=javascript)
-![Status](https://img.shields.io/badge/Prototype-Ready-brightgreen?style=plastic)
-![Team](https://img.shields.io/badge/Team-3%20Members-red?style=plastic&logo=github)
+![Status](https://img.shields.io/badge/Prototype-Ready-brightgreen?style=plastic&labelColor=black)
+![Team](https://img.shields.io/badge/Team-3%20Members-red?style=plastic&labelColor=black&logo=github)
+![Static Badge](https://img.shields.io/badge/Github_Pages-Live_Demo-brightgreen?style=plastic&logo=github&labelColor=black&link=https%3A%2F%2Fkhatarnakshreya.github.io%2FResume-Shortlisting-Prototype%2F)
+![Static Badge](https://img.shields.io/badge/%F0%9F%93%8A_Canva-PPT-blue?style=plastic&logo=Canva&labelColor=black&link=https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAHFNY93Zcs%2F1k3KeecNkPzLqUEgfH5xWQ%2Fview)
 
 A prototype web application built for Hackathon by our team of three.  
 This project demonstrates an automated way to shortlist student resumes against job requirements using a simple scoring algorithm.
@@ -64,9 +66,13 @@ This project demonstrates an automated way to shortlist student resumes against 
 
 ---
 
-## 📊 Presentation
-We also prepared a **Canva presentation** explaining the prototype:  
-[📊 CANVA PPT](https://www.canva.com/design/DAHFNY93Zcs/1k3KeecNkPzLqUEgfH5xWQ/view)
+## 📊 Presentation and Live Demo
+- We also prepared a **Canva presentation** explaining the prototype:
+![Static Badge](https://img.shields.io/badge/%F0%9F%93%8A_Canva-PPT-blue?style=flat&logo=Canva&labelColor=black&link=https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAHFNY93Zcs%2F1k3KeecNkPzLqUEgfH5xWQ%2Fview)
+
+
+- Check out the live demo hosted on **GitHub Pages**: 
+![Static Badge](https://img.shields.io/badge/Github_Pages-Live_Demo-brightgreen?style=flat&logo=github&labelColor=black&link=https%3A%2F%2Fkhatarnakshreya.github.io%2FResume-Shortlisting-Prototype%2F)
 
 ---
 
